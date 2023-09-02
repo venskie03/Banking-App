@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <link rel="stylesheet" href="user.css">
+    <title>Banking App</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="shadow-xl shadow-gray-300 text-black absolute border border-black w-80 h-3/5 p-8 mt-44 rounded-r-3xl">
+            <ion-icon name="logo-bitcoin" class="text-3xl mt-1 absolute"></ion-icon>
+                <span class="font-bold text-3xl ml-8 ">LUGIBANK</span>  
+            <ul class="mt-20">
+                <li class="mt-8 text-xl p-2 hover:bg-slate-100"><ion-icon name="home" class="absolute mt-1"></ion-icon>
+                <a href="userpage.html" class="ml-8">Dashboard</a></li>
+                <li class="text-xl p-2 hover:bg-slate-100"><ion-icon name="send" class="absolute mt-1"></ion-icon>
+                <a href="transfer.html" class="ml-8">Transfer Money</a></li>
+                <li class="mt-2 text-xl p-2 hover:bg-slate-100"><ion-icon name="wallet" class="absolute mt-1"></ion-icon>
+                    <a href="deposit.html" class="ml-8">Deposit</a></li>
+            <li class="mt-2 text-xl p-2 hover:bg-slate-100"> <ion-icon name="card" class="absolute mt-1"></ion-icon>
+                <a href="withdraw.html" class="ml-8">Withdraw</a></li>
+                <li class="mt-2 text-xl p-2 hover:bg-slate-100"><ion-icon name="receipt" class="absolute mt-1"></ion-icon>
+                    <a href="history.html" class="ml-8">Transactions History</a></li>
+            <li class="text-xl mt-2 p-2 hover:bg-slate-100"> <ion-icon name="log-out" class="absolute mt-1 text-red-500"></ion-icon>
+                <a href="/login.html" class="ml-8 text-red-500">Logout</a></li>
+            </ul>
+            </nav>
+    <div class="dashboard ml-96">
+        <span class="text-3xl absolute mt-12">Transfer Money</span>
+    <img src="ID.png" alt="" class="shadow-xl ml-5 shadow-gray-500 absolute h-52 w-80 mb-3 rounded-lg mt-28">
+    <div class="card-details">
+        <span class="absolute p-8 text-2xl text-white ml-44 mt-24">LUGIBANK</span>
+        <span class="absolute p-2 ml-12 text-2xl mt-56 text-white"id="banknumber">1234 5678 9101 1121</span>
+    </div>
+    <div class="time-info absolute bg-slate-100 rounded-lg flex shadow-lg shadow-gray-300 p-3 right-96 mt-6 font-bold">
+        <div class="time mr-12" id="time">8:00 AM</div>
+        <div class="date mr-12" id="date">12/01/2023</div>
+        <div class="day" id="day">Monday</div>
+      </div>
+        <img src="profile.jpg" alt="" class="w-14 absolute rounded-full right-60 mt-4">
+        <h1 id="user-info" class="absolute right-16 mt-8 font-bold"></h1>
+        <ion-icon name="notifications" class="absolute right-10 mt-9 font-bold"></ion-icon>
+
+    <div class="userwallet flex absolute text-center text-white font-sans text-2xl">
+    <div class="user-deposit ml-96 mt-28  h-52 w-80  rounded-lg bg-black shadow-lg shadow-gray-600">
+        <ion-icon name="wallet" class="mt-4 text-5xl"></ion-icon>
+        <h1 class="">Total Deposit</h1>
+        <span id="totaldeposited" class=""></span>
+    </div>
+    <div class="user-deposit ml-10  mt-28  h-52 w-80 rounded-lg bg-black shadow-xl shadow-gray-600">
+        <ion-icon name="card" class="mt-4 text-5xl"></ion-icon>
+        <h1 class="">Total Withdraw</h1>
+        <span id="totalwithdrawn" class=""></span>
+    </div>
+    <div class="user-deposit ml-10  mt-28 h-52 w-80 rounded-lg bg-black shadow-xl shadow-gray-600">
+        <ion-icon name="logo-bitcoin" class="mt-4 text-5xl"></ion-icon>
+        <h1 class="">Total Balance</h1>
+        <span class="" id="ammountbalance"></span>
+    </div>
+        </div>
+    </div>
+    </div>
+    <section id="transaction-history" class="p-10 bg-black absolute grid h-3/6 w-2/6 rounded-lg text-white text-center right-96 mr-48 shadow-lg shadow-gray-400 font-serif mt-96">
+        <h2 class=>Transaction History</h2>
+        <ul id="history-list" class="bg-slate-800 h-64 text-lg overflow-auto"></ul>
+        <button id="clear-history">Clear Transaction History</button>
+    </section>
+    
+<script src="user.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

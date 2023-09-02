@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="table.css">
+    <title>Banking App</title>
+</head>
+<body>
+    <div class="container flex">
+     
+        <div class="time-info absolute bg-slate-100 rounded-lg flex shadow-lg shadow-gray-300 p-3 right-96 mt-6 font-bold">
+          <div class="time mr-12" id="time">8:00 AM</div>
+          <div class="date mr-12" id="date">12/01/2023</div>
+          <div class="day mr-12" id="day">Monday</div>
+          <a href="/login.html" class="text-red-400">Logout</a>
+        </div>
+        
+    <main class="mt-14 ml-96">
+        <section id="users" class="max-h-80">
+            <h2 class="text-3xl">Users List</h2>
+            <div class="table-wrapper ">
+              <table class="min-h-full w-full border-collapse shadow-lg rounded-lg shadow-gray-400">
+                <thead class="bg-slate-500">
+                  <tr class="text-white">
+                    <th class="p-2">Name</th>
+                    <th class="p-2">Balance</th>
+                    <th class="p-2">Username</th>
+                    <th class="p-2">Password</th>
+                    <th class="p-2">Bank Number</th>
+                    <th class="p-3">Operation</th>
+                  </tr>
+                </thead>
+                <tbody id="user-list" class="bg-slate-200 pl-4 py-3 max-h-40 overflow-y-scroll">
+                  <!-- users will be added dynamically with javascript -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        <section id="create-user" class="border border-black shadow-lg rounded-lg shadow-gray-400  p-10 mt-10 text-center">
+            <h2 class="text-black text-2xl font-bold">Create User</h2>
+            <form class="mt-8 grid ">
+                <label for="name">Name:</label>
+                <input type="text" id="name" class="border text-center text-2xl rounded border-black" required>
+                <label for="bank-id" class="mt-4">Bank ID Number:</label>
+                <input type="text" id="bankid" class="border text-center text-2xl rounded border-black" disabled>
+                <label for="username" class="mt-4">Username:</label>
+                <input type="text" id="username" class="border text-center text-2xl rounded border-black" required>
+                <label for="password" class="mt-4">Password:</label>
+                <input type="password" id="password" class="border text-center text-2xl rounded border-black" required>
+                <label for="balance" class="mt-4">Balance:</label>
+                <input type="number" id="balance" class="border text-center text-2xl rounded border-black" required>
+                <button type="submit" class="bg-slate-400 p-3 mt-6 w-full text-lg rounded">Create</button>
+                </form>
+        </section>
+        <section id="transaction"  class="mb-4 border border-black shadow-lg shadow-gray-400 rounded-lg flex justify-center  p-10 mt-10 text-center">
+     
+            <form class="border-solid border-2 border-gray-50 shadow-lg shadow-gray-400 p-5 grid">
+                <h1>Transfer Money</h1>
+                <label for="sender">Sender:</label>
+                <input type="text" id="sender" class="border text-center rounded border-black" required>
+                <label for="receiver">Receiver:</label>
+                <input type="text" id="receiver" class="border text-center rounded border-black" required>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" class="border text-center rounded border-black" required>
+                <button class="bg-slate-400 p-2 mt-3 rounded" type="submit">Transfer</button>
+            </form>
+            <form class="border-solid border-2 border-gray-50 shadow-lg shadow-gray-400 p-5 grid ml-4">
+                <h1>Deposit Money</h1>
+                <label for="account">Account:</label>
+                <input type="text" id="account" class="border text-center rounded border-black" required>
+                <label for="deposit">Deposit:</label>
+                <input type="number" id="deposit" class="border text-center rounded border-black" required>
+                <button class="bg-slate-400 p-1 mt-3 rounded" type="submit">Deposit</button>
+            </form>
+            <form  class="border-solid border-2 border-gray-50 shadow-lg shadow-gray-400 p-5 grid ml-4">
+                <h1>Withdraw Money</h1>
+                <label for="account">Account:</label>
+                <input type="text" id="account" class="border text-center rounded border-black" required>
+                <label for="withdraw">Withdraw:</label>
+                <input type="number" id="withdraw" class="border text-center rounded border-black" required>
+                <button class="bg-slate-400 mt-3 rounded" type="submit">Withdraw</button>
+            </form>
+        </section>
+    </main>
+</div>
+    <script src="admin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

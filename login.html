@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Login | Banking App</title>
+      <link rel="stylesheet" type="text/css" href="style.css">
+   </head>
+   <body>
+    <div class="container mx-auto  bg-[#192a56] m-auto mt-48 w-96 shadow-lg shadow-slate-600 h-full p-9 rounded-lg ">
+      <header>
+         <h1 class="flex justify-center mb-5 text-4xl font-sans text-[#18dcff]">LOGIN</h1>
+      </header>
+      <main>
+         <form id="login-form" class="mt-2">
+            <label for="username" class="mt-4 text-xl text-[#18dcff]">Username</label>
+            <input type="text" id="username" name="username" class="mb-6 mt-1 bg-[#192a56] border-b-2 border-[#18dcff] text-white placeholder:italic text-base leading-6 w-full"  placeholder="Enter Username...." required>
+            <label for="password" class="text-[#18dcff] text-xl">Password</label>
+            <input type="password" id="password" name="password" class="mb-1 mt-1 bg-[#192a56] border-b-2 border-[#18dcff] text-white placeholder:italic text-base leading-6 w-full" placeholder="Enter Password...." required>
+            <button type="submit" class="mt-4 mb-4 bg-[#18dcff] font-bold w-36 p-1 rounded-full float-right">Login</button>
+         </form>
+      </main>
+      <footer>
+         <p class="text-[#18dcff] mt-16">&copy; 2021 Banking App</p>
+      </footer>
+    </div>
+      <script>
+         function validateLogin(event) {
+            event.preventDefault();
+            let enteredUsername = event.target.elements.username.value;
+            let enteredPassword = event.target.elements.password.value;
+            let users = JSON.parse(localStorage.getItem('users'));
+            if (users === null) {
+               users = []; 
+            } 
+            let loginUser = users.find(function(user) { 
+               return user.username === enteredUsername && user.password === enteredPassword; 
+            }); 
+            if (enteredUsername === 'admin' && enteredPassword === 'admin') { 
+               localStorage.setItem('currentUser', JSON.stringify(loginUser)); 
+               window.location.href= 'admin/admin.html'; 
+            } else if (loginUser) {
+               localStorage.setItem('currentUser', JSON.stringify(loginUser)); 
+               window.location.href = 'User/userpage.html';
+            } else {
+               alert('Invalid username or password!');
+            }
+         }
+         document.querySelector('#login-form').addEventListener('submit', validateLogin);
+      </script>
+   <body>
+</html>
